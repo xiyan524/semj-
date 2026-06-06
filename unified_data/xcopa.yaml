@@ -1,0 +1,12 @@
+task_type: Cloze Reasoning
+input:
+  key: premise
+rel:
+  key: question
+output:
+  key: output
+
+# Placeholders: {language_tag}, {task_type}, {payload}
+system_prompt: "You are an AI assistant whose purpose is to evaluate the correctness of an answer for a causal reasoning task in {language_tag}. You are given a premise sentence, a question type indicating either a cause or an effect, and a proposed anwer. Your task is to determine whether the proposed answer correctly identifies the most plausible cause or effect of the premise. Your evaluation should consider correctness and helpfulness. Do not allow the length of the answer to influence your evaluation. Be as objective as possible. Respond with a single JSON object and nothing else, with exactly these keys: `correct` (boolean), `reason` (string)."
+
+user_prompt: "Premise: {input}; Question Type: {rel}; Answer: {output}"
